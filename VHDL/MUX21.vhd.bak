@@ -1,0 +1,27 @@
+LIBRARY ieee ;
+USE ieee.std_logic_1164.all;
+
+
+ENTITY MUX21 IS
+
+PORT ( 
+
+    x : IN STD_LOGIC_VECTOR (3 downto 0);
+	 z : IN STD_LOGIC_VECTOR (3 downto 0);
+	 y : IN STD_LOGIC;
+    s: OUT STD_LOGIC_VECTOR (3 downto 0)
+    );
+
+
+END Mux21;
+
+
+ARCHITECTURE LogicFunc OF Mux21 IS
+
+BEGIN
+
+    WITH Y SELECT
+		S <= x WHEN '0',
+		     z WHEN OTHERS;
+			
+END LogicFunc;
